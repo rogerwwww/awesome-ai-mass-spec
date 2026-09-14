@@ -104,6 +104,30 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(self.by_title[title]["categories"], "spectrum-to-fingerprint")
         self.assertEqual(
             self.by_title[
+                "Rapid Prediction of Electron–Ionization Mass Spectrometry Using Neural Networks"
+            ]["categories"],
+            "structure-to-spectrum",
+        )
+        self.assertEqual(
+            self.by_title[
+                "Deep Learning Prediction of Electrospray Ionization Tandem Mass Spectra of Chemically Derived Molecules"
+            ]["categories"],
+            "structure-to-spectrum",
+        )
+        self.assertEqual(
+            self.by_title[
+                "An End-to-End Deep Learning Framework for Translating Mass Spectra to De-Novo Molecules"
+            ]["categories"],
+            "de-novo-elucidation",
+        )
+        self.assertEqual(
+            self.by_title[
+                "MADGEN: Mass-Spec Attends to De Novo Molecular Generation"
+            ]["categories"],
+            "de-novo-elucidation",
+        )
+        self.assertEqual(
+            self.by_title[
                 "GEMS: Molecular Structure Identification via Geodesic Navigation of the Isomer Manifold"
             ]["categories"].split(";")[0],
             "de-novo-elucidation",
