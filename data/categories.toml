@@ -1,0 +1,54 @@
+[[categories]]
+slug = "surveys"
+label = "Surveys and Perspectives"
+description = "Reviews, perspectives, and historical overviews of computational and AI-enabled small-molecule mass spectrometry."
+
+[[categories]]
+slug = "formula-inference"
+label = "Molecular Formula Inference"
+description = "Methods that infer or rank molecular formulae and adduct assignments from mass spectra."
+
+[[categories]]
+slug = "structure-to-spectrum"
+label = "Structure-to-Spectrum Prediction"
+description = "Forward models that simulate mass spectra or fragmentation behavior from molecular structures."
+
+[[categories]]
+slug = "spectrum-to-fingerprint"
+label = "Spectrum-to-Fingerprint Prediction"
+description = "Inverse models that predict molecular fingerprints or related structural descriptors from spectra."
+
+[[categories]]
+slug = "representation-learning"
+label = "Representation Learning and Spectral Similarity"
+description = "Learned spectral or cross-modal representations, similarity functions, and molecular-spectrum alignment."
+
+[[categories]]
+slug = "de-novo-elucidation"
+label = "De Novo Structure Elucidation"
+description = "Methods that construct or iteratively edit molecular structures conditioned on mass spectra."
+
+[[categories]]
+slug = "class-property"
+label = "Chemical Class and Property Prediction"
+description = "Direct prediction of chemical classes, structural properties, or molecular phenotypes from spectra."
+
+[[categories]]
+slug = "annotation-confidence"
+label = "Annotation Confidence"
+description = "Methods and frameworks for estimating, calibrating, or communicating annotation confidence."
+
+[[categories]]
+slug = "metabolite-generation"
+label = "Metabolite Generation and Discovery"
+description = "Generative models for plausible metabolites or natural products beyond spectrum-conditioned elucidation."
+
+[[categories]]
+slug = "datasets-benchmarks"
+label = "Datasets and Benchmarks"
+description = "Datasets, spectral libraries, benchmarks, and studies of evaluation methodology."
+
+[[categories]]
+slug = "systems-agents"
+label = "Systems, Workflows, and Agents"
+description = "End-to-end software systems, search infrastructure, integrated workflows, and scientific agents."
