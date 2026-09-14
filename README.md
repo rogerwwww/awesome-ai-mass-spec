@@ -1,4 +1,4 @@
-# Awesome AI for Mass Spectrometry
+# Awesome AI for Mass Spectrometry Papers
 
 A curated collection of papers, software, datasets, and benchmarks at the intersection of artificial intelligence and mass spectrometry.
 
