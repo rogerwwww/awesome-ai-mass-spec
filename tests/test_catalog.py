@@ -120,6 +120,12 @@ class CatalogTests(unittest.TestCase):
         )
         self.assertEqual(
             self.by_title[
+                "Charting the Small-Molecule Universe from Mass Spectra with Neuro-Symbolic AI"
+            ]["categories"],
+            "structure-to-spectrum",
+        )
+        self.assertEqual(
+            self.by_title[
                 "An End-to-End Deep Learning Framework for Translating Mass Spectra to De-Novo Molecules"
             ]["categories"],
             "de-novo-elucidation",
@@ -181,6 +187,7 @@ class CatalogTests(unittest.TestCase):
     def test_method_names_are_structured_and_rendered(self) -> None:
         expected = {
             "⭐Fragment-Grounded Neural Simulation of Electron Ionization Mass Spectra at Library Scale": "ICICLE",
+            "Charting the Small-Molecule Universe from Mass Spectra with Neuro-Symbolic AI": "AIMe",
             "Mass Spectra Prediction with Structural Motif-Based Graph Neural Networks": "MoMS-Net",
             "An Ensemble Spectral Prediction (ESP) Model for Metabolite Annotation": "ESP",
             "Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry": "RASSP",

@@ -17,7 +17,7 @@ Catalog metadata and the generated bibliography are dedicated under [CC0 1.0](LI
 
 - [Surveys and Perspectives](#surveys-and-perspectives) (3)
 - [Molecular Formula Inference](#molecular-formula-inference) (9)
-- [Structure-to-Spectrum Prediction](#structure-to-spectrum-prediction) (22)
+- [Structure-to-Spectrum Prediction](#structure-to-spectrum-prediction) (23)
 - [Spectrum-to-Fingerprint Prediction](#spectrum-to-fingerprint-prediction) (8)
 - [De Novo Structure Elucidation](#de-novo-structure-elucidation) (20)
 - [Representation Learning and Spectral Similarity](#representation-learning-and-spectral-similarity) (9)
@@ -53,6 +53,7 @@ Methods that infer or rank molecular formulae and adduct assignments from mass s
 
 Forward models that simulate mass spectra or fragmentation behavior from molecular structures.
 
+- `AIMe` **Charting the Small-Molecule Universe from Mass Spectra with Neuro-Symbolic AI** — Utku U. Acikalin; Dieqiao Feng; Aaron M. Ferber; Goncalo J. Gouveia; Tyler J. Schwertfeger; Di Chen; Delia Qu; Marissa A. Fontaine; Yingheng Wang; Richard A. Bernstein; Haofan Wang; Tae-Hyung Won; Christopher N. Parkhurst; ...; Carla P. Gomes. *bioRxiv* (2026). [paper](https://www.biorxiv.org/content/10.64898/2026.08.05.743095v1) · [DOI](https://doi.org/10.64898/2026.08.05.743095)
 - `ICICLE` **⭐Fragment-Grounded Neural Simulation of Electron Ionization Mass Spectra at Library Scale** — Magdalena Lederbauer; Runzhong Wang; Connor W. Coley. *ChemRxiv* (2026). [paper](https://chemrxiv.org/doi/full/10.26434/chemrxiv.15008135) · [DOI](https://doi.org/10.26434/chemrxiv.15008135)
 - `GLACIER` **⭐GLACIER: Rethinking Mass Spectrum Prediction as an Object Detection Problem** — Rui-Xi Wang; Runzhong Wang; Connor W. Coley. *arXiv* (2026). [paper](https://arxiv.org/abs/2606.29161) · [DOI](https://doi.org/10.48550/arXiv.2606.29161) · [code](https://github.com/coleygroup/ms-pred) <kbd>MIT</kbd>
 - `MolSpecFlow` **MolSpecFlow: Mass-Constrained Hybrid Flow Matching for Joint Molecular-Spectral Analysis** — Yu Wang; Fan Yang; Kaikun Xu; Li Yuan; Jun Zhu; Jingjie Zhang; Zhenchao Tang; Yatao Bian; Cheng Chang; Yonghong Tian; Jianhua Yao. *bioRxiv* (2026). [paper](https://www.biorxiv.org/content/10.64898/2026.01.28.702438v1) · [DOI](https://doi.org/10.64898/2026.01.28.702438)
