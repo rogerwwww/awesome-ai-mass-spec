@@ -15,7 +15,7 @@ Catalog metadata and the generated bibliography are dedicated under [CC0 1.0](LI
 
 ## Contents
 
-- [Surveys and Perspectives](#surveys-and-perspectives) (3)
+- [Surveys and Perspectives](#surveys-and-perspectives) (5)
 - [Molecular Formula Inference](#molecular-formula-inference) (9)
 - [Structure-to-Spectrum Prediction](#structure-to-spectrum-prediction) (23)
 - [Spectrum-to-Fingerprint Prediction](#spectrum-to-fingerprint-prediction) (8)
@@ -24,14 +24,16 @@ Catalog metadata and the generated bibliography are dedicated under [CC0 1.0](LI
 - [Chemical Class and Property Prediction](#chemical-class-and-property-prediction) (2)
 - [Annotation Confidence](#annotation-confidence) (2)
 - [Metabolite Generation and Discovery](#metabolite-generation-and-discovery) (3)
-- [Datasets and Benchmarks](#datasets-and-benchmarks) (7)
+- [Datasets and Benchmarks](#datasets-and-benchmarks) (9)
 - [Systems, Workflows, and Agents](#systems-workflows-and-agents) (10)
 
 ## Surveys and Perspectives
 
 Reviews, perspectives, and historical overviews of computational and AI-enabled small-molecule mass spectrometry.
 
+- **Bridging MS2 Spectra and Chemical Space: Advances in Spectral Similarity, Molecular Retrieval, and De Novo Structure Discovery** — Julian Pollmann; Roman Bushuiev; Anton Bushuiev; Tomáš Pluskal; Florian Huber. *ChemRxiv* (2026). [paper](https://chemrxiv.org/doi/full/10.26434/chemrxiv.15000536/v2) · [DOI](https://doi.org/10.26434/chemrxiv.15000536/v2)
 - **Recent Developments in Machine Learning for Mass Spectrometry** — Armen G. Beck; Matthew Muhoberac; Caitlin E. Randolph; Connor H. Beveridge; Prageeth R. Wijewardhane; Hilkka I. Kenttämaa; Gaurav Chopra. *ACS Measurement Science Au* (2024). [paper](https://doi.org/10.1021/acsmeasuresciau.3c00060) · [DOI](https://doi.org/10.1021/acsmeasuresciau.3c00060)
+- **Good Practices and Recommendations for Using and Benchmarking Computational Metabolomics Metabolite Annotation Tools** — Niek F. de Jonge; Kevin Mildau; David Meijer; Joris J. R. Louwen; Christoph Bueschl; Florian Huber; Justin J. J. van der Hooft. *Metabolomics* (2022). [paper](https://doi.org/10.1007/s11306-022-01963-y) · [DOI](https://doi.org/10.1007/s11306-022-01963-y)
 - **Computational Mass Spectrometry for Small Molecules** — Kerstin Scheubert; Franziska Hufsky; Sebastian Böcker. *Journal of Cheminformatics* (2013). [paper](https://doi.org/10.1186/1758-2946-5-12) · [DOI](https://doi.org/10.1186/1758-2946-5-12)
 - `DENDRAL` **DENDRAL: A Case Study of the First Expert System for Scientific Hypothesis Formation** — Robert K. Lindsay; Bruce G. Buchanan; Edward A. Feigenbaum; Joshua Lederberg. *Artificial Intelligence* (1993). [paper](https://doi.org/10.1016/0004-3702(93)90068-M) · [DOI](https://doi.org/10.1016/0004-3702(93)90068-M)
 
@@ -157,9 +159,11 @@ Datasets, spectral libraries, benchmarks, and studies of evaluation methodology.
 
 - **Confronting Spurious Evaluations of Computational Methods in Small Molecule Mass Spectrometry** — Vishu Gupta; Michael A. Skinnider. *bioRxiv* (2026). [paper](https://www.biorxiv.org/content/10.64898/2026.05.03.722532v1) · [DOI](https://doi.org/10.64898/2026.05.03.722532)
 - `MassSpecGym v1.5` **⭐MassSpecGym in the Wild: Uncovering and Correcting Evaluation Pitfalls in AI-Driven Molecule Discovery** — Hongxuan Liu; Roman Bushuiev; Ivy Lightheart; Mrunali Manjrekar; Anton Bushuiev; Magdalena Lederbauer; Filip Jozefov; Yinkai Wang; Soha Hassoun; Josef Sivic; James Taylor; Runzhong Wang; David Healey; Tomáš Pluskal; Connor W. Coley. *arXiv* (2026). [paper](https://arxiv.org/abs/2606.19624) · [DOI](https://doi.org/10.48550/arXiv.2606.19624) · [code](https://github.com/pluskal-lab/MassSpecGym) <kbd>MIT</kbd>
+- **Small Molecule Retrieval from Tandem Mass Spectrometry: What Are We Optimizing For?** — Gaetan De Waele; Marek Wydmuch; Krzysztof Dembczyński; Wojciech Kotłowski; Willem Waegeman. *arXiv* (2026). [paper](https://arxiv.org/abs/2602.16507) · [DOI](https://doi.org/10.48550/arXiv.2602.16507) · [code](https://github.com/gdewael/ms-mole) <kbd>MIT</kbd>
 - **An Evaluation Methodology for Machine Learning-Based Tandem Mass Spectra Similarity Prediction** — Michael Strobel; Alberto Gil-de-la-Fuente; Mohammad Reza Zare Shahneh; Yasin El Abiead; Roman Bushuiev; Anton Bushuiev; Tomáš Pluskal; Mingxun Wang. *BMC Bioinformatics* (2025). [paper](https://doi.org/10.1186/s12859-025-06194-1) · [DOI](https://doi.org/10.1186/s12859-025-06194-1)
 - `MSnLib` **MSnLib: Efficient Generation of Open Multi-Stage Fragmentation Mass Spectral Libraries** — Corinna Brungs; Robin Schmid; Steffen Heuckeroth; Aninda Mazumdar; Matúš Drexler; Pavel Šácha; Pieter C. Dorrestein; Daniel Petras; Louis-Felix Nothias; Václav Veverka; Radim Nencka; Zdeněk Kameník; Tomáš Pluskal. *Nature Methods* (2025). [paper](https://www.nature.com/articles/s41592-025-02813-0) · [DOI](https://doi.org/10.1038/s41592-025-02813-0) · [code](https://github.com/corinnabrungs/msn_tree_library) <kbd>MIT</kbd>
 - `MassSpecGym` **MassSpecGym: A Benchmark for the Discovery and Identification of Molecules** — Roman Bushuiev; Anton Bushuiev; Niek F. de Jonge; Adamo Young; Fleming Kretschmer; Raman Samusevich; Janne Heirman; Fei Wang; Luke Zhang; Kai Dührkop; Marcus Ludwig; Nils A. Haupt; Apurva Kalia; ...; Tomáš Pluskal. *Advances in Neural Information Processing Systems* (2024). [paper](https://arxiv.org/abs/2410.23326) · [DOI](https://doi.org/10.48550/arXiv.2410.23326) · [code](https://github.com/pluskal-lab/MassSpecGym) <kbd>MIT</kbd>
+- **MAD HATTER Correctly Annotates 98% of Small Molecule Tandem Mass Spectra Searching in PubChem** — Martin A. Hoffmann; Fleming Kretschmer; Marcus Ludwig; Sebastian Böcker. *Metabolites* (2023). [paper](https://doi.org/10.3390/metabo13030314) · [DOI](https://doi.org/10.3390/metabo13030314)
 - **Metabolomics Workbench: An International Repository for Metabolomics Data and Metadata, Metabolite Standards, Protocols, Tutorials and Training, and Analysis Tools** — Manish Sud; Eoin Fahy; Dawn Cotter; Kenan Azam; Ilango Vadivelu; Charles Burant; Arthur Edison; Oliver Fiehn; Richard Higashi; K. Sreekumaran Nair; Susan Sumner; Shankar Subramaniam. *Nucleic Acids Research* (2016). [paper](https://doi.org/10.1093/nar/gkv1042) · [DOI](https://doi.org/10.1093/nar/gkv1042)
 - `GNPS` **Sharing and Community Curation of Mass Spectrometry Data with Global Natural Products Social Molecular Networking** — Mingxun Wang; Jeremy J Carver; Vanessa V Phelan; Laura M Sanchez; Neha Garg; Yao Peng; Don Duy Nguyen; Jeramie Watrous; Clifford A Kapono; Tal Luzzatto-Knaan; Carla Porto; Amina Bouslimani; Alexey V Melnik; ...; Nuno Bandeira. *Nature Biotechnology* (2016). [paper](https://doi.org/10.1038/nbt.3597) · [DOI](https://doi.org/10.1038/nbt.3597) · [source](https://github.com/CCMS-UCSD/GNPS_Workflows) <kbd>NOASSERTION</kbd>
 

@@ -167,6 +167,16 @@ class CatalogTests(unittest.TestCase):
             "datasets-benchmarks",
         )
         for title in (
+            "Small Molecule Retrieval from Tandem Mass Spectrometry: What Are We Optimizing For?",
+            "MAD HATTER Correctly Annotates 98% of Small Molecule Tandem Mass Spectra Searching in PubChem",
+        ):
+            self.assertEqual(self.by_title[title]["categories"], "datasets-benchmarks")
+        for title in (
+            "Bridging MS2 Spectra and Chemical Space: Advances in Spectral Similarity, Molecular Retrieval, and De Novo Structure Discovery",
+            "Good Practices and Recommendations for Using and Benchmarking Computational Metabolomics Metabolite Annotation Tools",
+        ):
+            self.assertEqual(self.by_title[title]["categories"], "surveys")
+        for title in (
             "Mass Spectra Prediction with Structural Motif-Based Graph Neural Networks",
             "An Ensemble Spectral Prediction (ESP) Model for Metabolite Annotation",
             "Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry",
@@ -217,6 +227,7 @@ class CatalogTests(unittest.TestCase):
         for title in (
             "Fragmentation Trees Reloaded",
             "Towards de Novo Identification of Metabolites by Analyzing Tandem Mass Spectra",
+            "MAD HATTER Correctly Annotates 98% of Small Molecule Tandem Mass Spectra Searching in PubChem",
         ):
             self.assertEqual(self.by_title[title]["method_name"], "")
             self.assertIn(f"- **{title}** —", rendered)
