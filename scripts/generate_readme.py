@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from catalog import HEADER_PATH, ROOT, load_categories, load_papers, render_readme
+from catalog import FOOTER_PATH, HEADER_PATH, ROOT, load_categories, load_papers, render_readme
 
 
 def main() -> int:
@@ -25,7 +25,10 @@ def main() -> int:
     args = parser.parse_args()
 
     rendered = render_readme(
-        load_papers(), load_categories(), HEADER_PATH.read_text(encoding="utf-8")
+        load_papers(),
+        load_categories(),
+        HEADER_PATH.read_text(encoding="utf-8"),
+        FOOTER_PATH.read_text(encoding="utf-8"),
     )
     if args.check:
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:

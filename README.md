@@ -178,3 +178,11 @@ End-to-end software systems, search infrastructure, integrated workflows, and sc
 - `GNPS` **Sharing and Community Curation of Mass Spectrometry Data with Global Natural Products Social Molecular Networking** — Mingxun Wang; Jeremy J Carver; Vanessa V Phelan; Laura M Sanchez; Neha Garg; Yao Peng; Don Duy Nguyen; Jeramie Watrous; Clifford A Kapono; Tal Luzzatto-Knaan; Carla Porto; Amina Bouslimani; Alexey V Melnik; ...; Nuno Bandeira. *Nature Biotechnology* (2016). [paper](https://doi.org/10.1038/nbt.3597) · [DOI](https://doi.org/10.1038/nbt.3597) · [source](https://github.com/CCMS-UCSD/GNPS_Workflows) <kbd>NOASSERTION</kbd>
 
 <!-- END GENERATED CATALOG -->
+
+## Related repositories
+
+We gratefully acknowledge these related community resources:
+
+- [merlin-ms/awesome-mass-spectral-libraries](https://github.com/merlin-ms/awesome-mass-spectral-libraries)
+- [josiehong/awesome-smallmol-massspec-ml](https://github.com/josiehong/awesome-smallmol-massspec-ml)
+- [enveda/computational-metabolomics-review](https://github.com/enveda/computational-metabolomics-review)

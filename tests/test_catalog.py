@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from catalog import (  # noqa: E402
+    FOOTER_PATH,
     HEADER_PATH,
     format_authors,
     load_categories,
@@ -249,6 +250,17 @@ class CatalogTests(unittest.TestCase):
             first_path.write_text(first, encoding="utf-8")
             second_path.write_text(second, encoding="utf-8")
             self.assertEqual(first_path.read_bytes(), second_path.read_bytes())
+
+    def test_related_repositories_footer_is_rendered_last(self) -> None:
+        footer = FOOTER_PATH.read_text(encoding="utf-8")
+        rendered = render_readme(self.papers, self.categories, self.header, footer)
+        self.assertTrue(rendered.rstrip().endswith(footer.rstrip()))
+        for repository in (
+            "merlin-ms/awesome-mass-spectral-libraries",
+            "josiehong/awesome-smallmol-massspec-ml",
+            "enveda/computational-metabolomics-review",
+        ):
+            self.assertIn(f"https://github.com/{repository}", rendered)
 
     def test_each_section_is_sorted_newest_first_then_title(self) -> None:
         rendered = render_readme(self.papers, self.categories, self.header)

@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAPERS_PATH = ROOT / "data" / "papers.csv"
 CATEGORIES_PATH = ROOT / "data" / "categories.toml"
 HEADER_PATH = ROOT / "data" / "header.md"
+FOOTER_PATH = ROOT / "data" / "footer.md"
 
 CSV_FIELDS = (
     "categories",
@@ -185,7 +186,10 @@ def anchor(label: str) -> str:
 
 
 def render_readme(
-    papers: list[dict[str, str]], categories: list[Category], header: str
+    papers: list[dict[str, str]],
+    categories: list[Category],
+    header: str,
+    footer: str = "",
 ) -> str:
     errors = validate_catalog(papers, categories)
     if errors:
@@ -227,5 +231,8 @@ def render_readme(
                 + " · ".join(links)
             )
 
-    lines.extend(["", "<!-- END GENERATED CATALOG -->", ""])
+    lines.extend(["", "<!-- END GENERATED CATALOG -->"])
+    if footer.strip():
+        lines.extend(["", footer.rstrip()])
+    lines.append("")
     return "\n".join(lines)
