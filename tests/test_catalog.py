@@ -179,6 +179,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_method_names_are_structured_and_rendered(self) -> None:
         expected = {
+            "⭐Fragment-Grounded Neural Simulation of Electron Ionization Mass Spectra at Library Scale": "ICICLE",
             "Mass Spectra Prediction with Structural Motif-Based Graph Neural Networks": "MoMS-Net",
             "An Ensemble Spectral Prediction (ESP) Model for Metabolite Annotation": "ESP",
             "Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry": "RASSP",
