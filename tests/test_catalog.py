@@ -38,19 +38,19 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(format_authors(fifteen), fifteen)
         self.assertEqual(
             format_authors(sixteen),
-            "Author 1; Author 2; Author 3; ...; Author 16",
+            "; ".join([*(f"Author {index}" for index in range(1, 14)), "...", "Author 16"]),
         )
 
         rendered = render_readme(self.papers, self.categories, self.header)
         title = "MassSpecGym: A Benchmark for the Discovery and Identification of Molecules"
         self.assertIn(
-            "Roman Bushuiev; Anton Bushuiev; Niek F. de Jonge; ...; Tomáš Pluskal",
+            "Roman Bushuiev; Anton Bushuiev; Niek F. de Jonge; Adamo Young; Fleming Kretschmer; Raman Samusevich; Janne Heirman; Fei Wang; Luke Zhang; Kai Dührkop; Marcus Ludwig; Nils A. Haupt; Apurva Kalia; ...; Tomáš Pluskal",
             rendered,
         )
         self.assertNotIn(self.by_title[title]["authors"], rendered)
 
     def test_initial_catalog_is_not_accidentally_shrunk(self) -> None:
-        self.assertGreaterEqual(len(self.papers), 70)
+        self.assertGreaterEqual(len(self.papers), 84)
         self.assertEqual(
             len({normalize_text(paper["title"]) for paper in self.papers}),
             len(self.papers),
@@ -73,11 +73,14 @@ class CatalogTests(unittest.TestCase):
 
         for title in (
             "Substructure-Based Annotation of High-Resolution Multistage MSn Spectral Trees",
-            "Automatic Compound Annotation from Mass Spectrometry Data Using MAGMa",
             "MetFrag Relaunched: Incorporating Strategies beyond In Silico Fragmentation",
         ):
             primary = self.by_title[title]["categories"].split(";")[0]
             self.assertEqual(primary, "structure-to-spectrum", title)
+        self.assertNotIn(
+            "Automatic Compound Annotation from Mass Spectrometry Data Using MAGMa",
+            self.by_title,
+        )
 
         self.assertNotIn(
             "candidate-retrieval",
@@ -128,6 +131,24 @@ class CatalogTests(unittest.TestCase):
         )
         self.assertEqual(
             self.by_title[
+                "FIDDLE: A Deep Learning Method for Chemical Formulas Prediction from Tandem Mass Spectra"
+            ]["categories"],
+            "formula-inference",
+        )
+        self.assertEqual(
+            self.by_title[
+                "Knowledge and Data-Driven Two-Layer Networking for Accurate Metabolite Annotation in Untargeted Metabolomics"
+            ]["categories"],
+            "formula-inference;systems-agents",
+        )
+        self.assertEqual(
+            self.by_title[
+                "FlowMS: Flow Matching for De Novo Structure Elucidation from Mass Spectra"
+            ]["categories"],
+            "de-novo-elucidation",
+        )
+        self.assertEqual(
+            self.by_title[
                 "GEMS: Molecular Structure Identification via Geodesic Navigation of the Isomer Manifold"
             ]["categories"].split(";")[0],
             "de-novo-elucidation",
@@ -138,6 +159,58 @@ class CatalogTests(unittest.TestCase):
             ]["categories"].split(";")[0],
             "datasets-benchmarks",
         )
+        for title in (
+            "Mass Spectra Prediction with Structural Motif-Based Graph Neural Networks",
+            "An Ensemble Spectral Prediction (ESP) Model for Metabolite Annotation",
+            "Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry",
+        ):
+            self.assertEqual(self.by_title[title]["categories"], "structure-to-spectrum")
+        for title in (
+            "Structural Annotation of Unknown Molecules in a Miniaturized Mass Spectrometer Based on a Transformer Enabled Fragment Tree Method",
+            "MassGenie: A Transformer-Based Deep Learning Method for Identifying Small Molecules from Their Mass Spectra",
+        ):
+            self.assertEqual(self.by_title[title]["categories"], "de-novo-elucidation")
+        self.assertEqual(
+            self.by_title[
+                "Supervised Contrastive Learning Leads to More Reasonable Spectral Embeddings"
+            ]["categories"],
+            "representation-learning",
+        )
+
+    def test_method_names_are_structured_and_rendered(self) -> None:
+        expected = {
+            "Mass Spectra Prediction with Structural Motif-Based Graph Neural Networks": "MoMS-Net",
+            "An Ensemble Spectral Prediction (ESP) Model for Metabolite Annotation": "ESP",
+            "Rapid Approximate Subset-Based Spectra Prediction for Electron Ionization–Mass Spectrometry": "RASSP",
+            "Structural Annotation of Unknown Molecules in a Miniaturized Mass Spectrometer Based on a Transformer Enabled Fragment Tree Method": "TeFT",
+            "MassGenie: A Transformer-Based Deep Learning Method for Identifying Small Molecules from Their Mass Spectra": "MassGenie",
+            "Supervised Contrastive Learning Leads to More Reasonable Spectral Embeddings": "SpecEmbedding",
+        }
+        rendered = render_readme(self.papers, self.categories, self.header)
+        for title, method_name in expected.items():
+            self.assertEqual(self.by_title[title]["method_name"], method_name)
+            self.assertIn(
+                f"`{method_name}` **{title}** —",
+                rendered,
+            )
+
+        self.assertIn(
+            "[code](https://github.com/HassounLab/ESP) <kbd>MIT</kbd>",
+            rendered,
+        )
+
+        survey_title = "Recent Developments in Machine Learning for Mass Spectrometry"
+        survey_line = next(
+            line for line in rendered.splitlines() if f"**{survey_title}**" in line
+        )
+        self.assertTrue(survey_line.startswith(f"- **{survey_title}** —"))
+
+        for title in (
+            "Fragmentation Trees Reloaded",
+            "Towards de Novo Identification of Metabolites by Analyzing Tandem Mass Spectra",
+        ):
+            self.assertEqual(self.by_title[title]["method_name"], "")
+            self.assertIn(f"- **{title}** —", rendered)
 
     def test_multilabel_paper_renders_in_each_section(self) -> None:
         rendered = render_readme(self.papers, self.categories, self.header)

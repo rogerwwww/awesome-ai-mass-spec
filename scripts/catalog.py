@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import html
 import re
 import tomllib
 import unicodedata
@@ -19,6 +20,7 @@ HEADER_PATH = ROOT / "data" / "header.md"
 CSV_FIELDS = (
     "categories",
     "title",
+    "method_name",
     "authors",
     "venue",
     "year",
@@ -31,7 +33,7 @@ CSV_FIELDS = (
 PUBLICATION_TYPES = {"journal", "conference", "workshop", "preprint"}
 DOI_RE = re.compile(r"^10\.\d{4,9}/\S+$", re.IGNORECASE)
 AUTHOR_DISPLAY_LIMIT = 15
-AUTHOR_DISPLAY_PREFIX = 3
+AUTHOR_DISPLAY_PREFIX = 13
 
 
 @dataclass(frozen=True)
@@ -160,6 +162,14 @@ def markdown_escape(value: str) -> str:
     return value.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
 
 
+def markdown_code(value: str) -> str:
+    """Wrap arbitrary text in a valid Markdown inline-code span."""
+    longest_run = max((len(run) for run in re.findall(r"`+", value)), default=0)
+    fence = "`" * (longest_run + 1)
+    padding = " " if value.startswith(("`", " ")) or value.endswith(("`", " ")) else ""
+    return f"{fence}{padding}{value}{padding}{fence}"
+
+
 def format_authors(value: str) -> str:
     """Shorten exceptionally long lists while retaining the final author."""
     authors = [author.strip() for author in value.split(";") if author.strip()]
@@ -208,11 +218,12 @@ def render_readme(
                     else "code"
                 )
                 links.append(
-                    f"[{source_label}]({paper['code_url']}) `{paper['code_license']}`"
+                    f"[{source_label}]({paper['code_url']}) <kbd>{html.escape(paper['code_license'])}</kbd>"
                 )
             author_punctuation = "" if authors.endswith((".", "!", "?")) else "."
+            method_prefix = f"{markdown_code(paper['method_name'])} " if paper["method_name"] else ""
             lines.append(
-                f"- **{title}** — {authors}{author_punctuation} *{venue}* ({paper['year']}). "
+                f"- {method_prefix}**{title}** — {authors}{author_punctuation} *{venue}* ({paper['year']}). "
                 + " · ".join(links)
             )
 

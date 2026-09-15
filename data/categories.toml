@@ -19,14 +19,14 @@ label = "Spectrum-to-Fingerprint Prediction"
 description = "Inverse models that predict molecular fingerprints or related structural descriptors from spectra."
 
 [[categories]]
-slug = "representation-learning"
-label = "Representation Learning and Spectral Similarity"
-description = "Learned spectral or cross-modal representations, similarity functions, and molecular-spectrum alignment."
-
-[[categories]]
 slug = "de-novo-elucidation"
 label = "De Novo Structure Elucidation"
 description = "Methods that construct or iteratively edit molecular structures conditioned on mass spectra."
+
+[[categories]]
+slug = "representation-learning"
+label = "Representation Learning and Spectral Similarity"
+description = "Learned spectral or cross-modal representations, similarity functions, and molecular-spectrum alignment."
 
 [[categories]]
 slug = "class-property"

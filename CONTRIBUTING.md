@@ -7,11 +7,12 @@ Thank you for helping maintain Awesome AI for Mass Spectrometry.
 1. Edit `data/papers.csv`; do not edit the generated catalog in `README.md`.
 2. Keep the exact column order shown in the existing file.
 3. Separate multiple category slugs with semicolons, putting the primary category first. Available categories and their definitions are in `data/categories.toml`.
-4. Enter the complete author list in publication order, separated by semicolons. The generated README displays lists of up to 15 authors in full; longer lists appear as the first three authors, `...`, and the final author. The CSV always retains the complete list.
-5. Use one of `journal`, `conference`, `workshop`, or `preprint` for `publication_type`.
-6. Prefer the version-of-record metadata. Use a stable public paper page where possible, and store a DOI as a bare value such as `10.1234/example`.
-7. Link source code only when the repository is controlled by the authors or official project. Record its SPDX license identifier. Use `NOASSERTION` when the repository is public but has no declared license; leave both source fields empty when there is no verified official repository.
-8. Run the local checks:
+4. Record the paper's explicitly named method, model, system, dataset, or benchmark in `method_name`. Leave it empty when the paper does not give the contribution a defensible name; do not invent an acronym.
+5. Enter the complete author list in publication order, separated by semicolons. The generated README displays lists of up to 15 authors in full; longer lists appear as the first 13 authors, `...`, and the final author. The CSV always retains the complete list.
+6. Use one of `journal`, `conference`, `workshop`, or `preprint` for `publication_type`.
+7. Prefer the version-of-record metadata. Use a stable public paper page where possible, and store a DOI as a bare value such as `10.1234/example`.
+8. Link source code only when the repository is controlled by the authors or official project. Record its SPDX license identifier. Use `NOASSERTION` when the repository is public but has no declared license; leave both source fields empty when there is no verified official repository.
+9. Run the local checks:
 
    ```bash
    python scripts/validate_catalog.py
