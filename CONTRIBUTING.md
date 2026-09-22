@@ -22,6 +22,8 @@ Thank you for helping maintain Awesome AI for Mass Spectrometry.
 
 Pull requests run the same read-only checks. After a catalog change is merged into `main`, GitHub Actions regenerates and commits `README.md` automatically.
 
+Ordinary paper additions and metadata corrections should require changes only to `data/papers.csv`. The tests validate every catalog row generically; edit `tests/` only when changing validation rules, rendering behavior, or another tested repository contract.
+
 For automatic publishing, repository maintainers must allow GitHub Actions to use a read/write workflow token, and branch rules must permit `github-actions[bot]` to update `README.md`. The validation workflow never receives write access.
 
 ## Scope and review
