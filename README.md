@@ -19,7 +19,7 @@ Catalog metadata and the generated bibliography are dedicated under [CC0 1.0](LI
 - [Molecular Formula Inference](#molecular-formula-inference) (9)
 - [Structure-to-Spectrum Prediction](#structure-to-spectrum-prediction) (23)
 - [Spectrum-to-Fingerprint Prediction](#spectrum-to-fingerprint-prediction) (8)
-- [De Novo Structure Elucidation](#de-novo-structure-elucidation) (20)
+- [De Novo Structure Elucidation](#de-novo-structure-elucidation) (21)
 - [Representation Learning and Spectral Similarity](#representation-learning-and-spectral-similarity) (9)
 - [Chemical Class and Property Prediction](#chemical-class-and-property-prediction) (2)
 - [Annotation Confidence](#annotation-confidence) (2)
@@ -96,6 +96,7 @@ Inverse models that predict molecular fingerprints or related structural descrip
 
 Methods that construct or iteratively edit molecular structures conditioned on mass spectra.
 
+- `DeniMS` **Aligning Mass Spectrometry with Molecular Representations for Guiding de novo Structure Prediction** — Yonatan Harnik; Nir Cohen; Shai Kendler; Nitzan Tzanani; Anat Milo. *ChemRxiv* (2026). [paper](https://chemrxiv.org/doi/full/10.26434/chemrxiv.15000101/v1) · [DOI](https://doi.org/10.26434/chemrxiv.15000101/v1) · [source](https://github.com/Milo-group/DeniMS) <kbd>NOASSERTION</kbd>
 - `GLMR` **Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra** — Yiwen Zhang; Keyan Ding; Yihang Wu; Xiang Zhuang; Yi Yang; Qiang Zhang; Huajun Chen. *AAAI Conference on Artificial Intelligence* (2026). [paper](https://ojs.aaai.org/index.php/AAAI/article/view/37132) · [DOI](https://doi.org/10.48550/arXiv.2511.06259)
 - `FlowMS` **FlowMS: Flow Matching for De Novo Structure Elucidation from Mass Spectra** — Jianan Nie; Peng Gao. *ICLR Workshop on Foundation Models for Science* (2026). [paper](https://openreview.net/forum?id=7H0fSu6gz1) · [DOI](https://doi.org/10.48550/arXiv.2603.18397)
 - `FRIGID` **⭐FRIGID: Scaling Diffusion-Based Molecular Generation from Mass Spectra at Training and Inference Time** — Montgomery Bohde; Hongxuan Liu; Mrunali Manjrekar; Magdalena Lederbauer; Shuiwang Ji; Runzhong Wang; Connor W. Coley. *arXiv* (2026). [paper](https://arxiv.org/abs/2604.16648) · [DOI](https://doi.org/10.48550/arXiv.2604.16648) · [source](https://github.com/coleygroup/FRIGID) <kbd>NOASSERTION</kbd>

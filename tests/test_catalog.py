@@ -156,6 +156,12 @@ class CatalogTests(unittest.TestCase):
         )
         self.assertEqual(
             self.by_title[
+                "Aligning Mass Spectrometry with Molecular Representations for Guiding de novo Structure Prediction"
+            ]["categories"],
+            "de-novo-elucidation",
+        )
+        self.assertEqual(
+            self.by_title[
                 "GEMS: Molecular Structure Identification via Geodesic Navigation of the Isomer Manifold"
             ]["categories"].split(";")[0],
             "de-novo-elucidation",
@@ -204,6 +210,7 @@ class CatalogTests(unittest.TestCase):
             "Structural Annotation of Unknown Molecules in a Miniaturized Mass Spectrometer Based on a Transformer Enabled Fragment Tree Method": "TeFT",
             "MassGenie: A Transformer-Based Deep Learning Method for Identifying Small Molecules from Their Mass Spectra": "MassGenie",
             "Supervised Contrastive Learning Leads to More Reasonable Spectral Embeddings": "SpecEmbedding",
+            "Aligning Mass Spectrometry with Molecular Representations for Guiding de novo Structure Prediction": "DeniMS",
         }
         rendered = render_readme(self.papers, self.categories, self.header)
         for title, method_name in expected.items():
